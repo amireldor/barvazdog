@@ -4,5 +4,5 @@ test("write my name", () => {
     var lastName: string = "Eldor";
     var myName: string = `Amir ${lastName}`;
 
-    expect(myName === 'Amir Eldor')
+    expect(myName).toBe("Amir Eldor")
 })
