@@ -1,19 +1,33 @@
-import WorkItem, { MAX_TITLE_LENGTH } from '../src/models/WorkItem'
+import WorkItem from '../src/models/WorkItem'
 
-test("should set the title and return true", () => {
-    const value = "A"
-    var item = new WorkItem()
+var workItem = null
 
-    var ok = item.setTitle(value)
-    expect(ok).toBeTruthy()
-    expect(item.title).toBe(value)
+const sillyText = "Gizmo is the bizmo"
+
+beforeEach(() => {
+    workItem = new WorkItem()
 })
 
-test("should trim the title length and return false", () => {
-    const value = "A".repeat(MAX_TITLE_LENGTH + 100)
-    var item = new WorkItem()
+describe("handling title property", () => {
+    test("title can be set with setter", () => {
+        workItem.title = sillyText
+        expect(workItem.title).toBe(sillyText)
+    })
 
-    var ok = item.setTitle(value)
-    expect(ok).toBeFalsy()
-    expect(item.title).toHaveLength(MAX_TITLE_LENGTH)
+    test("title can be set with a set function", () => {
+        expect(workItem.setTitle(sillyText)).toBeTruthy()
+        expect(workItem.title).toBe(sillyText)
+    })
+})
+
+describe("handling text property", () => {
+    test("text can be set with setter", () => {
+        workItem.text = sillyText
+        expect(workItem.text).toBe(sillyText)
+    })
+
+    test("text can be set with a set function", () => {
+        expect(workItem.setText(sillyText)).toBeTruthy()
+        expect(workItem.text).toBe(sillyText)
+    })
 })
