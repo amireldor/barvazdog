@@ -1,9 +1,13 @@
 {
     "compilerOptions": {
         "outFile": "build/script.js",
-        "module": "system",
+        "module": "amd",
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": true
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "tests"
+    ]
 }
