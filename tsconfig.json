@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "outFile": "build/script.js",
-        "module": "amd",
+        "module": "commonjs",
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": true,
-        "jsx": "react"
+        "jsx": "react",
+        "moduleResolution": "node",
+        "experimentalDecorators": true
     },
     "exclude": [
         "node_modules",

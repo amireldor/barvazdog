@@ -1,16 +1,26 @@
+
 import * as React from 'react'
-/*import { observer } from 'mobx-react'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react'
 
-export default observer(class App extends React.Component<any, any> {
-    public render() {
-        return (<div>
-            <h1>hi!</h1>
-        </div>)
-    }
-})*/
+class TestState {
+    @observable time = 0
 
-export default class App extends React.Component<any, any> {
-    public render() {
-        return <h1>dawg</h1>
+    public inc() {
+        this.time++
     }
 }
+
+var state = new TestState()
+setInterval(() => state.inc(), 1000)
+
+@observer
+class App extends React.Component<undefined, undefined> {
+    public render() {
+        return (<div>
+            <h1>{state.time}</h1>
+        </div>)
+    }
+}
+
+export default App
