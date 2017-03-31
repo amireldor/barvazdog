@@ -1,0 +1,22 @@
+{
+  "name": "barvazdog",
+  "version": "0.0.0",
+  "description": "Productivity app that is essentially a Trello and WorkFlowy rip-off",
+  "main": "build/script.js",
+  "dependencies": {
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "productivity",
+    "rip-off",
+    "project",
+    "management"
+  ],
+  "author": "Amir Eldor",
+  "license": "AGPL-3.0"
+}
