@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "webpack --watch"
+    "dev": "webpack --watch",
+    "prod": "PRODUCTION=1 webpack"
   },
   "keywords": [
     "productivity",

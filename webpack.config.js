@@ -1,6 +1,19 @@
 const webpack = require('webpack')
 const path = require('path')
 
+const PRODUCTION = process.env.PRODUCTION !== undefined
+
+let plugins = []
+if (PRODUCTION) {
+    console.log("Production flag enabled!")
+
+    plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {}
+    }))
+} else {
+    console.log("Development build")
+}
+
 module.exports = {
     entry: ['./src/main.tsx'],
     output: {
@@ -18,5 +31,6 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             }
         ]
-    }
+    },
+    plugins
 }
