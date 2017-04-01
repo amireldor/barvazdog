@@ -25,17 +25,3 @@ for (let x = 0; x < 5; x++) {
     var grandchild = new WorkItem(`grandchild ${x}`)
     childRef.pushChild(grandchild)
 }
-
-for (let x = 0; x < 5; x++) {
-    setTimeout(() => {
-        if (x <= 3) {
-            childRef.children[3].pushChild(new WorkItem("cool!"))
-        }
-    }, (x + 1) * 900)
-}
-
-for (let x = 0; x < 5; x++) {
-    setTimeout(() => {
-        root.pushChild(new WorkItem("nice!"))
-    }, (x + 1) * 1200)
-}

@@ -11,10 +11,10 @@ class App extends React.Component<undefined, undefined> {  // TODO: add interfac
             return ''
         }
 
-        return (<ul className={styles.list}>
+        return (<ul>
             {children.map((item, index) => {
                 return (<li key={index}>
-                    <span className={styles.example}>{item.title}</span>
+                    <span>{item.title}</span>
                     {App.renderChildrenList(item.children)}
                 </li>)
             })}
@@ -25,7 +25,7 @@ class App extends React.Component<undefined, undefined> {  // TODO: add interfac
         return (<div>
             <strong>root title (observable WorkItem) {root.title}</strong><br/>
             <strong>message (observable regular var): {workStore.message}</strong>
-            {App.renderChildrenList(root.children)}
+            <div className={styles.board}>{App.renderChildrenList(root.children)}</div>
         </div>)
     }
 }

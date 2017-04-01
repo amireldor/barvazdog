@@ -1,5 +1,29 @@
-.list
-    color: orange
+.itemList
+    font-size: 24pt
 
-.example
-    color blue
+
+.board
+    ul  // top
+        background-color: lighten(orange, 42%)
+        padding: 10pt 20pt
+        list-style-type: none
+        display: flex
+
+        li  // column
+            flex: 1
+            color: darken(red, 30%)
+            background-color: #ddd
+            border-radius: 20pt
+            border: 1px solid black
+            text-align: center
+            font-weight: bold
+            margin: 0 6pt
+
+            ul  // card list container
+                display: block
+                background-color: transparent
+
+                li // card
+                    background-color: white
+                    padding: 12pt
+                    text-align: left
