@@ -4,28 +4,15 @@ import workStore, { root } from '../stores/WorkStore'
 
 import * as styles from './App.styl'
 
+import NotebookItem from './NotebookItem'
+
 @observer
 class App extends React.Component<undefined, undefined> {  // TODO: add interface(s)
-    static renderChildrenList(children) {
-        if (children.length <= 0) {
-            return ''
-        }
-
-        return (<ul>
-            {children.map((item, index) => {
-                return (<li key={index}>
-                    <span>{item.title}</span>
-                    {App.renderChildrenList(item.children)}
-                </li>)
-            })}
-        </ul>)
-    }
-
     public render() {
-        return (<div>
+        return (<div className={styles.app}>
             <strong>root title (observable WorkItem) {root.title}</strong><br/>
             <strong>message (observable regular var): {workStore.message}</strong>
-            <div className={styles.board}>{App.renderChildrenList(root.children)}</div>
+            <div className={styles.notebook}><NotebookItem item={root}/></div>
         </div>)
     }
 }

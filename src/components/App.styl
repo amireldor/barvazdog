@@ -1,10 +1,16 @@
-.itemList
-    font-size: 24pt
+@import './common.styl'
+
+.app
+    font-family: sans-serif
+
+.notebook
+    padding: gutter gutter gutter*2.4
+    border: 1px solid #aaa
 
 
 .board
     ul  // top
-        background-color: lighten(orange, 42%)
+        background-color: lighten(orange, 82%)
         padding: 10pt 20pt
         list-style-type: none
         display: flex
@@ -12,18 +18,19 @@
         li  // column
             flex: 1
             color: darken(red, 30%)
-            background-color: #ddd
-            border-radius: 20pt
-            border: 1px solid black
             text-align: center
             font-weight: bold
             margin: 0 6pt
 
             ul  // card list container
                 display: block
-                background-color: transparent
+                background-color: #ddd
+                border-radius: 20pt
+                border: 1px solid black
 
-                li // card
+                li  // card
                     background-color: white
+                    border-radius: 4pt
+                    margin-bottom: 8pt
                     padding: 12pt
                     text-align: left

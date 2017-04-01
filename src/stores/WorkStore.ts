@@ -19,9 +19,18 @@ for (let x = 0; x < 5; x++) {
     root.pushChild(child)
 }
 
-var childRef = root.children[1]
+for (let x = 0; x < 2; x++) {
+    var grandchild = new WorkItem(`grandchild ${x}`)
+    root.children[0].pushChild(grandchild)
+}
 
 for (let x = 0; x < 5; x++) {
     var grandchild = new WorkItem(`grandchild ${x}`)
-    childRef.pushChild(grandchild)
+    root.children[1].pushChild(grandchild)
+}
+
+var childRef = root.children[3]
+for (let x = 0; x < 3; x++) {
+    var grandchild = new WorkItem(`grandchild ${x}`)
+    root.children[3].pushChild(grandchild)
 }
