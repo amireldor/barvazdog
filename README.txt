@@ -13,3 +13,16 @@ I like cats.
 ----------------------------------------
 * Trello: https://trello.com/
 * WorkFlowy: https://workflowy.com/
+
+
+npm has:
+
+ - test
+ - run dev
+ - run prod
+
+You should:
+
+ - Run your own webserver for serving the app (will probably change when
+   this becomes a real app.
+
