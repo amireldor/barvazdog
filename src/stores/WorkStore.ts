@@ -25,8 +25,10 @@ for (let x = 0; x < 2; x++) {
 }
 
 for (let x = 0; x < 5; x++) {
-    var grandchild = new WorkItem(`grandchild ${x}`)
-    root.children[1].pushChild(grandchild)
+    setTimeout(() => {
+        var grandchild = new WorkItem(`grandchild ${x}`)
+        root.children[1].pushChild(grandchild)
+    }, 700 * x)
 }
 
 var childRef = root.children[3]
