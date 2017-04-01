@@ -12,10 +12,30 @@ workStore.root.title = "Hi"
 export var root: WorkItem = workStore.root
 export default workStore
 
+// TODO: remove temp games for debugging
+
 for (let x = 0; x < 5; x++) {
-    root.pushChild(new WorkItem(`Hello ${x}`))   
+    var child = new WorkItem(`child ${x}`)
+    root.pushChild(child)
+}
+
+var childRef = root.children[1]
+
+for (let x = 0; x < 5; x++) {
+    var grandchild = new WorkItem(`grandchild ${x}`)
+    childRef.pushChild(grandchild)
+}
+
+for (let x = 0; x < 5; x++) {
     setTimeout(() => {
-        root.title += ' check'
-        root.pushChild(new WorkItem(`Delayed child ${x}`))
-    }, (x + 1) * 300)
+        if (x <= 3) {
+            childRef.children[3].pushChild(new WorkItem("cool!"))
+        }
+    }, (x + 1) * 900)
+}
+
+for (let x = 0; x < 5; x++) {
+    setTimeout(() => {
+        root.pushChild(new WorkItem("nice!"))
+    }, (x + 1) * 1200)
 }

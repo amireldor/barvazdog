@@ -5,15 +5,26 @@ import workStore, { root } from '../stores/WorkStore'
 
 @observer
 class App extends React.Component<undefined, undefined> {
+    static renderChildrenList(children) {
+        if (children.length <= 0) {
+            return ''
+        }
+
+        return (<ul>
+            {children.map((item, index) => {
+                return (<li key={index}>
+                    {item.title}
+                    {App.renderChildrenList(item.children)}
+                </li>)
+            })}
+        </ul>)
+    }
+
     public render() {
         return (<div>
             <strong>root title (observable WorkItem) {root.title}</strong><br/>
             <strong>message (observable regular var): {workStore.message}</strong>
-
-            {root.children.map((item, index) => {
-                return <div key={index}>{index} <em>item</em> {item.title}</div>
-            })}
-
+            {App.renderChildrenList(root.children)}
         </div>)
     }
 }
