@@ -1,19 +1,20 @@
-
 import * as React from 'react'
 import { observer } from 'mobx-react'
 import workStore, { root } from '../stores/WorkStore'
 
+import * as styles from './App.styl'
+
 @observer
-class App extends React.Component<undefined, undefined> {
+class App extends React.Component<undefined, undefined> {  // TODO: add interface(s)
     static renderChildrenList(children) {
         if (children.length <= 0) {
             return ''
         }
 
-        return (<ul>
+        return (<ul className={styles.list}>
             {children.map((item, index) => {
                 return (<li key={index}>
-                    {item.title}
+                    <span className={styles.example}>{item.title}</span>
                     {App.renderChildrenList(item.children)}
                 </li>)
             })}

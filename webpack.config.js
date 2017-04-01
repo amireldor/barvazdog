@@ -29,7 +29,20 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader'
-            }
+            },
+            {
+                test: /\.styl$/,
+                loaders: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    'stylus-loader'
+                ]
+            },
         ]
     },
     plugins
