@@ -1,5 +1,6 @@
 import User from './User'
 import MaxLengthString from '../utils/MaxLengthString'
+import { observable } from 'mobx'
 
 export const MAX_TITLE_LENGTH: number = 100
 export const MAX_TEXT_LENGTH: number = 1000
@@ -28,12 +29,12 @@ class WorkItem {
     set tags(value: string[]) { this.privateTags = value }
     set users(value: User[]) { this.privateUsers = value }
 
-    private privateTitle = new MaxLengthString('', MAX_TITLE_LENGTH)
-    private privateText = new MaxLengthString('', MAX_TEXT_LENGTH)
-    private privateChildren: WorkItem[]
-    private privateNotes: WorkItem[]
-    private privateTags: string[]
-    private privateUsers: User[]
+    @observable private privateTitle = new MaxLengthString('', MAX_TITLE_LENGTH)
+    @observable private privateText = new MaxLengthString('', MAX_TEXT_LENGTH)
+    @observable private privateChildren: WorkItem[]
+    @observable private privateNotes: WorkItem[]
+    @observable private privateTags: string[]
+    @observable private privateUsers: User[]
 
     public setTitle (value: string): boolean {
         return this.privateTitle.set(value)
