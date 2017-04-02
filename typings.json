@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "combokeys": "github:slavomirvojacek/adbrain-typescript-definitions/combokeys/combokeys.d.ts"
+  }
+}

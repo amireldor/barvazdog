@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/slavomirvojacek/adbrain-typescript-definitions/master/combokeys/combokeys.d.ts",
+    "raw": "github:slavomirvojacek/adbrain-typescript-definitions/combokeys/combokeys.d.ts",
+    "typings": "https://raw.githubusercontent.com/slavomirvojacek/adbrain-typescript-definitions/master/combokeys/combokeys.d.ts"
+  }
+}
